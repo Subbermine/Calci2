@@ -1,0 +1,31 @@
+<head>
+  <title>Calculator</title>
+  <link rel="stylesheet" href="Calculator.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="screen"></div>
+    <div onclick="ac()" class="element operation-top">AC</div>
+    <div onclick="pm()" class="operation-top element">
+      <img src="plusminus.png" />
+    </div>
+    <div onclick="operation(5)" class="element operation-top">%</div>
+    <div onclick="operation(4)" class="element operation-right">÷</div>
+    <div onclick="Number(7)" class="element">7</div>
+    <div onclick="Number(8)" class="element">8</div>
+    <div onclick="Number(9)" class="element">9</div>
+    <div onclick="operation(3)" class="element operation-right">X</div>
+    <div onclick="Number(4)" class="element">4</div>
+    <div onclick="Number(5)" class="element">5</div>
+    <div onclick="Number(6)" class="element">6</div>
+    <div onclick="operation(2)" class="element operation-right">-</div>
+    <div onclick="Number(1)" class="element">1</div>
+    <div onclick="Number(2)" class="element">2</div>
+    <div onclick="Number(3)" class="element">3</div>
+    <div onclick="operation(1)" class="element operation-right">+</div>
+    <div onclick="Number(0)" class="element" id="zero">0</div>
+    <div class="element">.</div>
+    <div onclick="equal()" class="element operation-right">=</div>
+  </div>
+  <script src="Calculator.js"></script>
+</body>
