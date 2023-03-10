@@ -6,6 +6,8 @@
     text-align: center;
     background-color: 0;
     font-size: larger;
+    src: url("MyriadPro-Regular.otf");
+    font-family: myriadPro;
 }
 #container{
     width: 350px;
@@ -18,12 +20,29 @@
     flex-wrap: wrap;
 }
 img{
-    background-color: grey;
-    
+    background-color: grey;   
 }
 #zero{
     flex-basis: 50%;
     border-radius: 50%;
+    position: relative;
+}
+#zero > img{
+    background-color: 0;
+    width: 100%;
+    height: 70px;
+    padding: 0;
+}
+span{
+    position: absolute;
+    top: 38%;
+    left: 15%;
+    transform: translate(0%,-50%);
+    background-color: #353535;
+}
+
+#zero > img:hover{
+    cursor: pointer;
 }
 .element{
     background-color: #353535;
@@ -42,6 +61,7 @@ img{
     height: 100px;
     width: 100%;
     border-radius: 0;
+    padding-top: 5%;
 }
 .operation-right{
     background-color: #ff9f0c;

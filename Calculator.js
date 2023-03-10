@@ -3,23 +3,33 @@ var b = false,
   num1 = 0,
   opt,
   ans = 0,
-  p,
+  p = false,
   pvar = 1;
 function Number(z) {
-  if (b) {
-    num1 *= 10;
-    num1 += z;
-    document.getElementById("screen").innerHTML = num1;
-  } else {
-    num *= 10;
-    num += z;
-    document.getElementById("screen").innerHTML = num;
+  switch (b) {
+    case true:
+      if (p) {
+        pvar /= 10;
+        z *= pvar;
+      } else num1 *= 10;
+      num1 += z;
+      document.getElementById("screen").innerHTML = num1;
+      break;
+    case false:
+      if (p) {
+        pvar /= 10;
+        z *= pvar;
+      } else num *= 10;
+      num += z;
+      document.getElementById("screen").innerHTML = num;
   }
 }
 function ac() {
   num1 = 0;
   num = 0;
   b = false;
+  p = false;
+  pvar = 1;
   document.getElementById("screen").innerHTML = "";
 }
 function operation(z) {
@@ -41,6 +51,8 @@ function operation(z) {
   }
   document.getElementById("screen").innerHTML = "";
   b = true;
+  p = false;
+  pvar = 1;
 }
 function equal() {
   switch (opt) {
@@ -59,7 +71,12 @@ function equal() {
     case 5:
       ans = (num * num1) / 100;
   }
+  b = false;
+  p = false;
+  pvar = 1;
   document.getElementById("screen").innerHTML = ans;
+  num = ans;
+  num1 = 0;
 }
 function pm() {
   if (b) {
@@ -69,4 +86,12 @@ function pm() {
     num *= -1;
     document.getElementById("screen").innerHTML = num;
   }
+}
+function point() {
+  p = true;
+}
+if ("paintWorklet" in CSS) {
+  CSS.paintWorklet.addModule(
+    "https://www.unpkg.com/css-houdini-squircle@0.1.3/squircle.min.js"
+  );
 }
